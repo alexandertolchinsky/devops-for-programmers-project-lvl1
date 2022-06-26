@@ -1,5 +1,6 @@
 services:
   app:
+    image: alexandertolchinsky/devops-for-programmers-project-lvl1
     build:
       context: .
       dockerfile: Dockerfile.production
