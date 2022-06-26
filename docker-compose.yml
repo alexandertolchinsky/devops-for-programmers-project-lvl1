@@ -1,6 +1,6 @@
 services:
   app:
-    build: .
-    volumes:
-      - "$PWD/app:/app"
+    build:
+      context: .
+      dockerfile: Dockerfile.production
     command: npm test
