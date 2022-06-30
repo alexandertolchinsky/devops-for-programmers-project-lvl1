@@ -4,16 +4,16 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - "$PWD/app:/app" 
+      - "./app:/app" 
     ports:
       - "8080:8080"
-    command: bash -c 'sleep 3 && npm run dev' 
+    command: bash -c 'sleep 3 && npm start' 
   caddy:
     image: caddy
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - "$PWD/services/caddy/Caddyfile:/etc/caddy/Caddyfile"
+      - "./services/caddy/Caddyfile:/etc/caddy/Caddyfile"
     depends_on:
       - app
